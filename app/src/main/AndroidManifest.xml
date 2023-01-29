@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-<uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -26,9 +29,12 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <service android:name=".services.MyServices">
-
+        <service
+            android:name=".services.MyServices"
+            android:foregroundServiceType="mediaPlayback">
         </service>
+
+
     </application>
 
 </manifest>
